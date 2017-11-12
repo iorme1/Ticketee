@@ -8,7 +8,8 @@ class TicketsController < ApplicationController
 
   def create
     @ticket = @project.tickets.build(ticket_params)
-
+    @ticket.author = current_user
+    
     if @ticket.save
       flash[:notice] = "Ticket has been created."
       redirect_to [@project, @ticket]
@@ -35,7 +36,7 @@ class TicketsController < ApplicationController
   end
 
   def destroy
-    @ticket.destroy 
+    @ticket.destroy
     flash[:notice] = "Ticket has been deleted."
 
     redirect_to @project
