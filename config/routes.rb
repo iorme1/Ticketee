@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   end
 
   devise_for :users
+
   resources :projects, only: [:index, :show, :edit, :update] do
     resources :tickets
   end
