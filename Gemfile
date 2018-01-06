@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+gem "pundit", "~> 0.3.0"
 gem 'devise'
 gem 'rails', '4.2.8'
 gem 'sqlite3'
